@@ -1,4 +1,3 @@
-import java.io.Console;
 import java.io.InputStreamReader;
 import java.util.HashMap;
 import java.util.Map;
@@ -9,12 +8,8 @@ import java.util.Scanner;
  */
 public class MorseCodeTranslator {
 
-    private char[] eng = {'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '.', ',', '?', '\'', ' '};
+    private char[] eng = "abcdefghijklmnopqrstuvwxyz0123456789.,?' ".toCharArray();
     private String[] morse = {".-", "-...", "-.-.", "-..", ".", "..-.", "--.", "....", "..", ".---", "-.-", ".-..", "--", "-.", "---", ".--.", "--.-", ".-.", "...", "-", "..-", "...-", ".--", "-..-", "-.--", "--..", "-----", ".----", "..---", "...--", "....-", ".....", "-....", "--...", "---..", "----.", ".-.-.-", "--..--", "..--..", ".----.", "/"};
-
-    public static void main(String[] args) {
-        MorseCodeTranslator morseCodeTranslator = new MorseCodeTranslator();
-    }
 
     public MorseCodeTranslator() {
         Map<Integer, String> alphabet = new HashMap<>();
@@ -24,9 +19,15 @@ public class MorseCodeTranslator {
 
     }
 
+    public static void main(String[] args) {
+        MorseCodeTranslator morseCodeTranslator = new MorseCodeTranslator();
+    }
+
     private String takeInput(Map hm) {
         Scanner scan = new Scanner(new InputStreamReader(System.in));
         String output = "";
+
+        System.out.print("Input english to translate: ");
         String input = scan.nextLine().toLowerCase();
         char[] inputArray = input.toCharArray();
         for (char c: inputArray) {

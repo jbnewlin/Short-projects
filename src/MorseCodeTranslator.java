@@ -32,7 +32,6 @@ public class MorseCodeTranslator {
         for (char c: inputArray) {
             if (hm.containsKey((int)c)) {
                 output = output.concat(String.valueOf(hm.get((int)c)) + " ");
-//                System.out.println(String.valueOf(hm.get((int)c)));
             } else {
                 System.out.println("Value \'" + c + "\' doesn't exist in key");
                 return "";
